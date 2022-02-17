@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<EShop.Domain.Idenitity.EShopApplicationUser> SignInManager
+@inject UserManager<EShop.Domain.Idenitity.EShopApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <img src="~/Content/images/account-settings-icon.png" style="width: 3em; margin-right: 1.5em"/>
+            @*Hello @User.Identity.Name.Split('@')[0]!*@
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark"><img src="~/Content/images/logout-icon.png" style="width:4em" /></button>
+            </form>
+        </li>
+    }
+    else
+    {
+        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="account" asp-action="Register">Register</a>
+        </li>*@
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="account" asp-action="login"><img src="~/Content/images/login-icon.png" style="width:4em"/></a>
+        </li>
+    }
+</ul>

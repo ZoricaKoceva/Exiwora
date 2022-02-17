@@ -1,0 +1,414 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+.card {
+    box-shadow: 0px 50px 50px 0px rgb(255 218 185);
+}
+
+/*
+.background {
+    margin:0 auto; 
+    width:25em; 
+    background-image:url("../Content/images/Logo_Exiwora.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+*/
+
+/* Account Management Start*/
+.padding {
+    padding: 3rem !important
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    width: 3em;
+    border-radius: 5px
+}
+
+h6 {
+    font-size: 14px
+}
+
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+    .user-card-full .social-link li a {
+        font-size: 0.8em;
+        margin: 0 10px 0 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out
+    }
+/* Account management End*/
+
+.float-left, .float-right {
+    margin-top: 3em;
+}
+
+.search-input {
+    display: inline-block !important;
+}
+
+.m-3 {
+    margin-top: 3em !important;
+}
+
+.right-side-cart {
+    height:calc(100%-5.5em);
+}
+
+.footer {
+    position: fixed !important; 
+    bottom: 0 !important;
+}
+
+footer {
+    position: fixed !important;
+    bottom: 0 !important;
+}
+
+.table {
+    margin-bottom: 3rem !important;
+}
+
+.cart-total {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10em;
+    margin-top: 5em;
+}
+
+.dark-line {
+    height: 1em;
+    border-bottom: 0.3em solid #322836;
+    width: 12em;
+    margin: 0 auto;
+    margin-top: 0.5em;
+}
+
+.btn-exiwora:hover {
+    background-color: rgb(193, 176, 169) !important;
+}
+
+.btn-exiwora {
+    background-color: #eadcd6 !important;
+    margin: 6px;
+}
+
+.btn-exiwora-peach:hover {
+    background-color: rgb(229, 187, 150) !important;
+}
+
+.btn-exiwora-peach {
+    background-color: peachpuff !important;
+    margin: 6px;
+}
+
+.canvas-container {
+    position: fixed;
+    top: 80px;
+    margin-top: -1em;
+    left: 14px;
+    max-width: inherit;
+    width: 100%;
+    bottom: -8em;
+    max-height: inherit;
+    overflow: hidden;
+    /* height: 10px; */
+    z-index: 0;
+}
+
+nav {
+    height: 8em;
+    z-index: 1;
+}
+
+.card {
+    margin-bottom: 2em;
+}
+
+.signUpBtn {
+    background-color: #eadcd6 !important;
+    border: none !important;
+    font-weight: bold !important;
+}
+
+.btn-facebook {
+    background-color: #f5a3a3 !important;
+    border: none !important;
+}
+
+.btn-twitter {
+    background-color: #f5a3a3 !important;
+    border: none !important;
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.border-md {
+    border-width: 2px;
+}
+
+.btn-facebook {
+    background: #405D9D;
+    border: none;
+}
+
+    .btn-facebook:hover, .btn-facebook:focus {
+        background: #314879;
+    }
+
+.btn-twitter {
+    background: #42AEEC;
+    border: none;
+}
+
+    .btn-twitter:hover, .btn-twitter:focus {
+        background: #1799e4;
+    }
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+    min-height: 100vh;
+}
+
+.form-control:not(select) {
+    padding: 1.5rem 0.5rem;
+}
+
+select.form-control {
+    height: 52px;
+    padding-left: 0.5rem;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+
+.logindiv {
+    background-image: url("../Content/images/pastel-watercolor-with-golden-frame_23-2148798471.png");
+}
+
+.canvas-container {
+    background-image: url("../Content/images/luxury_red_carpet.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+footer {
+    background: rgb(226,208,183);
+    background: linear-gradient(180deg, rgba(226,208,183,1) 0%, rgba(240,220,195,1) 35%, rgba(254,251,248,1) 100%);
+}
+
+nav {
+    background: rgb(227,216,214);
+    background: linear-gradient(180deg, rgba(227,216,214,1) 0%, rgba(242,225,215,1) 53%, rgba(245,234,220,1) 100%);
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}

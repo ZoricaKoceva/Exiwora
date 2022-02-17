@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+    <h1>Paintings Gallery</h1>
+    <img src="~/Content/images/luxury_red_carpet.jpg" />
+    <img src="~/Content/images/left_vertical_standT.png" />
+    <img src="~/Content/images/center_horizontal_standT.png" />
+    <img src="~/Content/images/right_vertical_standT.png" />
+</div>*@
+
+<div class="row canvas-container">
+    <div class="col-md-3">
+        <div style="display:block; float:left; margin-left: 130px; margin-top:120px;">
+            <a asp-controller="Products" asp-action="IndexByCategory" asp-route-category="Canvas" style="display: inline-block; width: auto;">
+                <img src="~/Content/images/Screenshot (15) - cropped.png" style="width: 11em; position: absolute; left: 18.5em; top: 12.5em; transform: rotate(-10deg); height: 15em; "/>
+                <img src="~/Content/images/left_vertical_standT.png" style="max-height: 550px;" />
+            </a>
+        </div>
+
+        @*<h2>Application uses</h2>
+            <ul>
+                <li>Sample pages using ASP.NET Core MVC</li>
+                <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+            </ul>*@
+    </div>
+
+    <div class="col-md-3">
+        <div style="position: center">
+            <a asp-controller="Products" asp-action="IndexByCategory" asp-route-category="Digital" style="display: inline-block;  width: auto;">
+                <img src="~/Content/images/Digital Graphic/xx.png" style="width: 13em; position: absolute; top: 15em; left: 17.5em; height: 10.5em;"/>
+                <img src="~/Content/images/center_horizontal_standT.png" style="max-height: 600px;margin-top: 135px;margin-left: 120px;" />
+            </a>
+
+        </div>
+
+        @*<h2>How to</h2>
+            <ul>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
+            </ul>*@
+    </div>
+    <div class="col-md-3">
+        <div style="float: right; margin-top:120px; display: block;margin-right: -274px;">
+            @*float:revert;*@
+            <a asp-controller="Products" asp-action="IndexByCategory" asp-route-category="Pencil" style="display: inline-block; width: auto;">
+                <img src="~/Content/images/Screenshot (12).png" style="width: 10em; position: absolute; right: -6.5em; top: 12.5em; transform: rotate(5deg); }"/>
+                <img src="~/Content/images/right_vertical_standT.png" style="max-height: 550px;" />
+            </a>
+        </div>
+        @*<h2>Overview</h2>
+            <ul>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
+            </ul>*@
+    </div>
+    <div class="col-md-3">
+        @*<h2>Run &amp; Deploy</h2>
+            <ul>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
+                <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
+            </ul>*@
+    </div>
+</div>

@@ -1,0 +1,279 @@
+﻿@model EShop.Domain.DomainModels.Product
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><a asp-action="Index" asp-controller="Home">Home /</a>
+    <a asp-action="Index" asp-controller="Products"> All paintings / </a>
+    <a asp-action="IndexByCategory" asp-controller="Products" asp-route-category=@Model.Category> @Html.DisplayFor(model => model.Category)</a>
+    </h1>
+
+<div>
+
+
+    @*TUKA POCNUVA*@
+
+    <div class="product-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="@Html.DisplayFor(model => model.ProductImage)" alt="@Html.DisplayFor(model => model.ProductName)" style="width: 500px;" />
+                </div>
+                <!--<div class="col-sm-6">
+
+        <h1>@Model.ProductName</h1>
+        <div class="category-name"><i class="fa fa-fw fa-folder"></i> Категорија: @Model.Category</div>
+        <p class="description">@Model.ProductDescription</p>
+        <h3 class="price"><span>Цена:</span>@String.Format("{0:N2}", Model.ProductPrice)  денари</h3>-->
+                @*<div class="contact-person">
+            <h3>Лице за контакт: <b>@Model.</b></h3>
+            <div class="phone"><i class="fa fa-fw fa-phone"></i> @Model.User.PhoneNumber</div>
+            <div class="phone"><i class="fa fa-fw fa-envelope"></i> @Model.User.Email</div>
+        </div>*@
+                <!--</div>-->
+                @*<div class="details-picture col">
+                    <img src="@Html.DisplayFor(model => model.ProductImage)" alt="@Html.DisplayFor(model => model.ProductName)" style="width: 500px;" />
+                </div>*@
+
+            <div class="col">
+                <h1>
+                    @Html.DisplayFor(model => model.ProductName)
+                </h1>
+
+                <hr />
+
+                <div style="margin-bottom:1.5em">
+                    <p class="display-4" style="display:inline-block; font-size: 2em; font-weight:400">Rating: </p>
+
+                    @if (Model.Rating < 2)
+                    {
+            <img src="~/Content/images/palette-rating-1.png" style="width: 15%" />}
+
+                    @if (Model.Rating >= 2 && Model.Rating < 3)
+                    {
+            <img src="~/Content/images/palette-rating-2.png" style="width: 15%" />}
+
+                    @if (Model.Rating >= 3 && Model.Rating < 4)
+                    {
+            <img src="~/Content/images/palette-rating-3.png" style="width: 15%" />}
+
+                    @if (Model.Rating >= 4 && Model.Rating < 5)
+                    {
+            <img src="~/Content/images/palette-rating-4.png" style="width: 15%" />}
+
+                    @if (Model.Rating >= 5)
+                    {
+            <img src="~/Content/images/palette-rating-5.png" style="width: 15%" />}
+                </div>
+
+                <div style="margin-bottom: 2em;">
+                    <h4 style="margin-right: 1em; display: inline-block;"> @Html.DisplayFor(model => model.ProductPrice) <span class="badge badge-secondary">MKD</span></h4>
+                    <a asp-controller="Products" asp-action="AddProductToCard" asp-route-id="@Model.Id" class="btn btn-exiwora-peach">Add to Cart</a>
+                </div>
+
+                <p class="lead">
+                    @Html.DisplayFor(model => model.ProductDescription)
+                </p>
+
+                <p class="display-4" style="font-size:1.5em">Rate this painting: </p>
+
+                <div class="form-check">
+
+                    <div style="display: inline-block; margin-left: 1em; margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating1" value="1" checked>
+                        <label class="form-check-label" for="productRating1">
+                            1
+                        </label>
+                    </div>
+
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating2" value="2">
+                        <label class="form-check-label" for="productRating2">
+                            2
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating3" value="3">
+                        <label class="form-check-label" for="productRating3">
+                            3
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating4" value="4">
+                        <label class="form-check-label" for="productRating4">
+                            4
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating5" value="5">
+                        <label class="form-check-label" for="productRating5">
+                            5
+                        </label>
+                    </div>
+
+                </div>
+
+                <hr />
+                @*<textarea id="commentArea" class="form-control" placeholder="Leave a comment here" style="margin-bottom: 1em;"></textarea>
+                <br />
+                <button class="btn btn-exiwora">Post the comment</button>*@
+
+                @using (Html.BeginForm("AddComment","Products"))
+                {
+                    @Html.Hidden("id",Model.Id)
+                    @Html.TextArea("comment", Model.Comments, new { @class="form-control", @placeholder = "Leave a comment here"})
+                    <br />
+                    <input type="submit" class="btn btn-exiwora" value="Post the comment" />
+                }
+
+                <hr />
+
+                <div class="comments" style="margin-bottom: 2em">
+                    <p class="display-4" style="font-size: 2em; font-weight: 400"></p>
+                    @if (Model.Comments != null)
+                    {
+                        <p class="display-4" style="font-size: 1.5em">@Model.Comments</p>
+                    }
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        <script>$(document).ready(function () {
+            $(".navbar-inverse .navbar-nav > li").removeClass("active");
+        })</script>
+    }
+    @*TUKA ZAVRSUVA*@
+
+    @*<h4>Product</h4>*@
+    <hr />
+    <div class="container">
+
+    </div>
+    <div class="row">
+
+                @*<div class="details-picture col">
+                    <img src="@Html.DisplayFor(model => model.ProductImage)" alt="@Html.DisplayFor(model => model.ProductName)" style="width: 500px;"/>
+                </div>
+
+                <div class="col">
+                    <h1>
+                        @Html.DisplayFor(model => model.ProductName)
+                    </h1>
+
+                    <p class="lead">
+                        @Html.DisplayFor(model => model.ProductDescription)
+                    </p>
+
+                    <div style="margin-bottom: 2em;">
+                        <h4 style="margin-right: 1em; display: inline-block;"> @Html.DisplayFor(model => model.ProductPrice) <span class="badge badge-secondary">$</span></h4>
+            <a asp-controller="Products" asp-action="AddProductToCard" asp-route-id="@Model.Id" class="btn btn-info">Add to Cart</a>
+        </div>
+
+                    <textarea id="commentArea" class="form-control" placeholder="Leave a comment here" style="margin-bottom: 1em;"></textarea>
+
+                    <p>Rate this product: </p>
+
+                    <div style="display: inline-block; margin-left: 1em; margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating1" value="1" checked>
+                        <label class="form-check-label" for="productRating1">
+                            1
+                        </label>
+                    </div>
+
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating2" value="2">
+                        <label class="form-check-label" for="productRating2">
+                            2
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating3" value="3">
+                        <label class="form-check-label" for="productRating3">
+                            3
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating4" value="4">
+                        <label class="form-check-label" for="productRating4">
+                            4
+                        </label>
+                    </div>
+
+                    <div style="        display: inline-block;
+                margin-right: 1.5em;">
+                        <input class="form-check-input" type="radio" name="productRating" id="productRating5" value="5">
+                        <label class="form-check-label" for="productRating5">
+                            5
+                        </label>
+                    </div>
+
+                </div>*@
+
+    <!--<dl class="row" class="col-3">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>-->
+    @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </dt>*@
+    @*<dd class = "col-sm-10">
+            <img src="@Html.DisplayFor(model => model.ProductImage)" alt="/" />
+        </dd>*@
+    <!--<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class="">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>-->
+</div>
+</div>
+<div>
+    @*<a asp-controller="Products" asp-action="AddProductToCard" asp-route-id="@Model.Id" class="btn btn-info">Add to Cart</a>*@
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
